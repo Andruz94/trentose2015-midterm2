@@ -16,7 +16,33 @@ var tmpl = ' <li id="ID">' +
 
 $(document).ready(function(){
 
+    
+    for(var i=0;i<data.length;i++){
+       $(".practice").append(tmpl.replace("ID",i)
+                                  .replace("WORD",data[i].word_en)
+                                  .replace("SOLUTION",data[i].word_de))
+    
+       for(j=0;j<data.length;j++){
+          if(j==i){
+             $(".cards").addClass(current);   
+          }   
+       }
+        
+         
 
+    };
+    
+    
+    $("li").click(function(){
+       $(".options").show();
+           
+    })
+
+    
+    
+   
+    
+    
 });
 
 
